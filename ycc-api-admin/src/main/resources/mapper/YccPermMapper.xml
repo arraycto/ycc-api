@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.ycc.api.admin.mapper.YccPermMapper">
+
+    <select id="getPermissionByRoleId" resultType="yccPerm">
+        SELECT
+            p.*
+        FROM
+            ycc_perm p
+            JOIN ycc_role_perm rp ON rp.perm_id = p.id
+        WHERE
+            p.del = 0
+            AND rp.del = 0
+            AND rp.role_id =#{roleId}
+    </select>
+</mapper>

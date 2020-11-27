@@ -1,0 +1,29 @@
+server:
+  port: 8099
+  servlet:
+    context-path: /ycc-api-admin
+spring:
+  redis:
+    host: www.dmyily2.cn
+    port: 6379
+    database: 1
+    password: q1w2e3r4
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://www.dmyily2.cn:3306/ycc-api?useUnicode=true&characterEncoding=UTF-8
+    username: ycc-api
+    password: ycc123456
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: id_worker_str
+      logic-delete-field: del
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+      table-underline: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: cn.ycc.api.admin.entity
+  configuration:
+    map-underscore-to-camel-case: true
+

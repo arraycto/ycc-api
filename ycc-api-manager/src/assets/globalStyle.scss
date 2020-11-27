@@ -1,0 +1,45 @@
+$header-bg-color:#367FA9;
+$menu-bg-color:#222D32;
+$def-menu-width:230px;
+
+body{
+    min-height: 100vh;
+    #app{
+        height: 100vh;
+    }
+}
+
+.text-weight{
+    font-weight: bold;
+}
+.text-not-select{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+
+
+/**
+    iview munu选中状态的文本颜色
+*/
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu), .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu){
+    
+    @extend %menuActiveStyle;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title{
+    border-left: 3px solid transparent;
+}
+
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title:hover{
+    @extend %menuActiveStyle;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu), .ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):hover, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu), .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu):hover{
+    background-color: #1E282C;
+}
+%menuActiveStyle{
+    color:#ffffff;
+    border-left: 3px solid #3C8DBC;
+    background-color: #1E282C;
+}

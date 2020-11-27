@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.ycc.api.admin.mapper.YccMenuMapper">
+
+    <select id="getUserMenusByRoleId" resultType="yccMenu">
+      SELECT
+        m.*
+    FROM
+        ycc_menu m
+        JOIN ycc_role_menu rm ON rm.menu_id = m.id
+    WHERE
+        m.del = 0
+        AND rm.del = 0
+        AND rm.role_id =#{roleId}
+    </select>
+</mapper>
